@@ -1,0 +1,135 @@
+#nav-bg {
+  background-color: #153f59 !important;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 200px;
+  cursor: pointer;
+  margin-left: 3.75rem;
+}
+
+#burger-button {
+  margin-right: 5rem;
+  border-color: #ffffff;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#men-opt {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#men-opt:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 0;
+  transition: all 0.4s;
+}
+
+#men-opt:hover:after {
+  width: 10%;
+  background: #ffffff;
+}
+
+#men-opt:hover {
+  color: #666666;
+}
+
+#men-opt:active {
+  color: #012e46;
+}
+
+@media (min-width: 768px) {
+  #navbarNavAltMarkup {
+    margin-right: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #men-opt:hover:after {
+    width: 100%;
+    background: #ffffff;
+  }
+
+  #navbarNavAltMarkup {
+    margin-right: 5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    display: block;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 1rem; 
+  }
+
+  .logo-img {
+    margin-right: 7.5rem;
+  }
+
+  .collapse.navbar-collapse {
+    display: block;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+}

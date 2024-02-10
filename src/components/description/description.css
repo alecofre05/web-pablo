@@ -1,0 +1,27 @@
+.desc-cont {
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    height: 65rem;
+}
+
+.flex-child {
+    padding-top: 5rem;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto; 
+}
+
+@media (min-width: 1024px) {
+    .desc-cont {
+        flex-direction: row;
+        justify-content: space-around;
+        height: 25rem;
+    }
+
+    .flex-child {
+        text-align: left;
+        width: 600px;
+        margin: 0; 
+    }
+}
