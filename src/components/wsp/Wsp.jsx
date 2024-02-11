@@ -5,7 +5,7 @@ export const Wsp = () => {
 
     return (
         <>
-        <a href={`https://api.whatsapp.com/send?phone=${phone}`} className="float" target="_blank">
+        <a href={`https://api.whatsapp.com/send?phone=+549${phone}`} className="float" target="_blank">
             <i className="fa fa-whatsapp my-float"></i>
         </a>
         </>
