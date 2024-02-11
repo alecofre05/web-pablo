@@ -20,6 +20,10 @@
   .fa-whatsapp {
     padding-right: 6px;
   }
+
+  .fa-envelope-o {
+    padding-right: 6px;
+  }
   
   @media (min-width: 360px) {
     #nb-color {

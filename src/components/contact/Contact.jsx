@@ -58,16 +58,16 @@ export const Contact = () => {
           </div>
           <div className="contact-details">
             <p>
-              <span>Dirección:</span> J. D. Perón N°683 5° A, Buenos Aires
+              <i className="fa fa-map-marker"></i><span> Dirección:</span> J. D. Perón N°683 5° A, Buenos Aires
             </p>
             <p>
-              <span>Teléfono:</span> 11 3820-7357
+             <i className="fa fa-phone"></i><span> Teléfono:</span> 11 3820-7357
             </p>
             <p>
-              <span>Email:</span> pablogcofre@gmail.com
+              <i class="fa fa-envelope-o"></i><span> Email:</span> pablogcofre@gmail.com
             </p>
             <p>
-              <span>Instagram:</span> estudiocofre
+              <i class="fa fa-instagram"></i><span> Instagram:</span> estudiocofre
             </p>
           </div>
         </div>

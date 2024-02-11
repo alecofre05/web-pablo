@@ -1,10 +1,11 @@
 import './wsp.css';
 
 export const Wsp = () => {
-    const phone = "https://api.whatsapp.com/send?phone=1132389517"
+    const phone = "1138207357";
+
     return (
         <>
-        <a href={phone} className="float" target="_blank">
+        <a href={`https://api.whatsapp.com/send?phone=${phone}`} className="float" target="_blank">
             <i className="fa fa-whatsapp my-float"></i>
         </a>
         </>
