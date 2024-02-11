@@ -2,7 +2,7 @@ import './info.css'
 
 export const Info = () => {
 
-    const phone = "1138207357"
+    const phone = "5491138207357"
     const email = "pablogcofre@gmail.com";
 
     return (
