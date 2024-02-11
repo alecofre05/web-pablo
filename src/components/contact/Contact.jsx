@@ -4,8 +4,10 @@ import Map from '../../services/MyMap';
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Contact = () => {
+  const captcha_key = "6LdMMm8pAAAAAMbL_oLK_FpJ_QrzYxL1qvgfegiq";
   const form = useRef();
   const [formData, setFormData] = useState({
     name: '',
@@ -15,8 +17,15 @@ export const Contact = () => {
     message: '',
   });
 
+  const [captchaCompleted, setCaptchaCompleted] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!captchaCompleted) {
+      toast.error('Por favor, completa el captcha', { autoClose: 3000 });
+      return;
+    }
 
     emailjs.sendForm("service_yd4l2mh", "template_i846y4k", form.current, "HNLVab9UD4fUxYbbZ").then(
       (result) => {
@@ -28,6 +37,7 @@ export const Contact = () => {
           phone: '',
           message: '',
         });
+        setCaptchaCompleted(false); 
         toast.success('Mensaje enviado correctamente', { autoClose: 3000 });
       },
       (error) => {
@@ -42,6 +52,10 @@ export const Contact = () => {
       ...formData,
       [name]: value,
     });
+  };
+
+  const onChangeCaptcha = () => {
+    setCaptchaCompleted(true);
   };
 
   return (
@@ -64,10 +78,10 @@ export const Contact = () => {
              <i className="fa fa-phone"></i><span> Teléfono:</span> 11 3820-7357
             </p>
             <p>
-              <i class="fa fa-envelope-o"></i><span> Email:</span> pablogcofre@gmail.com
+              <i className="fa fa-envelope-o"></i><span> Email:</span> pablogcofre@gmail.com
             </p>
             <p>
-              <i class="fa fa-instagram"></i><span> Instagram:</span> estudiocofre
+              <i className="fa fa-instagram"></i><span> Instagram:</span> estudiocofre
             </p>
           </div>
         </div>
@@ -92,7 +106,11 @@ export const Contact = () => {
             <label>Mensaje</label>
             <textarea name="message" value={formData.message} onChange={handleInputChange} required />
           </div>
-          <button className="contact-btn" value="Send" type="submit">Enviar</button>
+          <ReCAPTCHA
+            sitekey={captcha_key}
+            onChange={onChangeCaptcha}
+          />
+          <button className="contact-btn mt-2" value="Send" type="submit">Enviar</button>
         </form>
         <ToastContainer />
       </div>
